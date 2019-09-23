@@ -18,7 +18,7 @@
     <link rel="icon" type="image/vnd.microsoft.icon" href="https://www.xilinx.com/etc.clientlibs/site/clientlibs/xilinx/all/resources/favicon.ico">
     <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://www.xilinx.com/etc.clientlibs/site/clientlibs/xilinx/all/resources/favicon.ico">
   
-  <title>2018.3 SDSoC™ Development Environment Tutorials &mdash; SDSoC™ Development Environment Tutorials v1.0 documentation</title>
+  <title>Search &mdash; SDSoC™ Development Environment Tutorials v1.0 documentation</title>
   
 <!-- Header information provided by Emily-->
     <meta name="apple-itunes-app" content="app-id=1063287962">
@@ -43,6 +43,7 @@
   
 
   
+    
   <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
   
     
@@ -55,13 +56,13 @@
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
+    <script type="text/javascript" src="_static/searchtools.js"></script>
 
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Lab 1: Introduction to the SDSoC Development Environment" href="lab-1-introduction-to-the-sdsoc-development-environment.html" /> 
+    <link rel="search" title="Search" href="#" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -122,7 +123,7 @@
           
 
           
-            <a href="#" class="icon icon-home" alt="Documentation Home"> SDSoC™ Development Environment Tutorials
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> SDSoC™ Development Environment Tutorials
           
 
           
@@ -135,7 +136,7 @@
 
           
 <div role="search">
-  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+  <form id="rtd-search-form" class="wy-form" action="#" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -171,7 +172,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="#">SDSoC™ Development Environment Tutorials</a>
+          <a href="index.html">SDSoC™ Development Environment Tutorials</a>
         
       </nav>
 
@@ -200,16 +201,14 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="#" class="icon icon-home"></a> &raquo;</li>
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>2018.3 SDSoC™ Development Environment Tutorials</li>
+      <li>Search</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
-          
         
       </li>
     
@@ -221,56 +220,23 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="sdsoc-development-environment-tutorials">
-<h1>2018.3 SDSoC™ Development Environment Tutorials<a class="headerlink" href="#sdsoc-development-environment-tutorials" title="Permalink to this headline">¶</a></h1>
-<p>This tutorial shows how to create an SDSoC™ platform that can be used to accelerate software functions using the SDx™ Integrated Design Environment (IDE) tool.</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">This tutorial is separated into labs. Each lab provides general instructions and supplementary detailed steps, allowing you to make choices based on your skill level as you progress through it. If you need help completing a general instruction, go to the detailed steps, or if you are ready, simply skip the step-by-step directions and move on to the next general instruction.</p>
-</div>
-<div class="section" id="hardware-and-software-requirements">
-<h2>Hardware and Software Requirements<a class="headerlink" href="#hardware-and-software-requirements" title="Permalink to this headline">¶</a></h2>
-<p>This tutorial requires that you have the SDx Integrated Design Environment v2018.2 installed. See the SDx Environments Release Notes, Installation, and Licensing Guide (UG1238&lt;<a class="reference external" href="https://www.xilinx.com/cgi-bin/docs/rdoc?v=2018.2;d=ug1238-sdx-rnil.pdf">https://www.xilinx.com/cgi-bin/docs/rdoc?v=2018.2;d=ug1238-sdx-rnil.pdf</a>&gt;__) for instructions. The SDx tool installs the SDx IDE as well as the required Vivado Design Suite and Software Development Kit (SDK) software.</p>
-</div>
-<div class="section" id="related-information">
-<h2>Related information<a class="headerlink" href="#related-information" title="Permalink to this headline">¶</a></h2>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="lab-1-introduction-to-the-sdsoc-development-environment.html">Lab 1: Introduction to the SDSoC Development Environment</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="lab-1-introduction-to-the-sdsoc-development-environment.html#step-1-creating-a-new-project">Step 1: Creating a New Project</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lab-1-introduction-to-the-sdsoc-development-environment.html#step-2-marking-functions-for-hardware-implementation">Step 2: Marking Functions for Hardware Implementation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lab-1-introduction-to-the-sdsoc-development-environment.html#step-3-building-a-design-with-hardware-accelerators">Step 3: Building a Design with Hardware Accelerators</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lab-1-introduction-to-the-sdsoc-development-environment.html#step-4-running-the-project">Step 4: Running the Project</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lab-1-introduction-to-the-sdsoc-development-environment.html#step-5-additional-exercises">Step 5: Additional Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lab-1-introduction-to-the-sdsoc-development-environment.html#summary">Summary</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="lab-2-performance-estimation.html">Lab 2: Performance Estimation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="lab-2-performance-estimation.html#step-1-setting-up-the-board">Step 1: Setting Up the Board</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lab-2-performance-estimation.html#step-2-setting-up-the-project-for-performance-estimation-and-building-the-project">Step 2: Setting Up the Project for Performance Estimation and Building the Project</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lab-2-performance-estimation.html#step-3-comparing-software-and-hardware-performance">Step 3: Comparing Software and Hardware Performance</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lab-2-performance-estimation.html#step-4-changing-scope-of-overall-speedup-comparison">Step 4: Changing Scope of Overall Speedup Comparison</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lab-2-performance-estimation.html#step-5-additional-exercises">Step 5: Additional Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lab-2-performance-estimation.html#summary">Summary</a></li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
-</div>
+  <noscript>
+  <div id="fallback" class="admonition warning">
+    <p class="last">
+      Please activate JavaScript to enable the search functionality.
+    </p>
+  </div>
+  </noscript>
 
+  
+  <div id="search-results">
+  
+  </div>
 
            </div>
            
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="lab-1-introduction-to-the-sdsoc-development-environment.html" class="btn btn-neutral float-right" title="Lab 1: Introduction to the SDSoC Development Environment" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-    </div>
   
 
   <hr/>
@@ -305,7 +271,14 @@
   
   
     
+  
+  <script type="text/javascript">
+    jQuery(function() { Search.loadIndex("searchindex.js"); });
+  </script>
+  
+  <script type="text/javascript" id="searchindexloader"></script>
    
+
 
 </body>
 </html>

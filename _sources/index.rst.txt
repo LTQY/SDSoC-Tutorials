@@ -1,0 +1,26 @@
+.. sdsoc-tutorial
+
+##################################################
+2018.3 SDSoC™ Development Environment Tutorials
+##################################################
+
+This tutorial shows how to create an SDSoC™ platform that can be used to accelerate software functions using the SDx™ Integrated Design Environment (IDE) tool.
+
+.. note:: This tutorial is separated into labs. Each lab provides general instructions and supplementary detailed steps, allowing you to make choices based on your skill level as you progress through it. If you need help completing a general instruction, go to the detailed steps, or if you are ready, simply skip the step-by-step directions and move on to the next general instruction.
+
+Hardware and Software Requirements
+===================================
+
+This tutorial requires that you have the SDx Integrated Design Environment v2018.2 installed. See the SDx Environments Release Notes, Installation, and Licensing Guide (UG1238<https://www.xilinx.com/cgi-bin/docs/rdoc?v=2018.2;d=ug1238-sdx-rnil.pdf>__) for instructions. The SDx tool installs the SDx IDE as well as the required Vivado Design Suite and Software Development Kit (SDK) software.
+
+Related information
+===================
+
+.. toctree::
+   :maxdepth: 2
+   
+   lab-1-introduction-to-the-sdsoc-development-environment
+   lab-2-performance-estimation
+
+
+

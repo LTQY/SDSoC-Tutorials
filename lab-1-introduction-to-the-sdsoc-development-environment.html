@@ -1,0 +1,421 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="keywords" content="SDSoC Tutorials"/>
+<meta name="description" content="The SDSoC (Software-Defined System-On-Chip) environment is an Eclipse-based Integrated Development Environment (IDE) for implementing heterogeneous embedded systems using the Zynq-7000 SoC and Zynq UltraScale+ MPSoC platforms."/>
+<meta name="xlnxdocumentclass" content="Document"> 
+<meta name="xlnxdocumenttypes" content="Tutorials"> 
+<meta name=" xlnxproductname" content="SDSoC">
+<!-- Header information provided by Emily-->
+    <meta name="Language" content="en">
+    <meta name="Location" content="us">
+    <link rel="icon" type="image/vnd.microsoft.icon" href="https://www.xilinx.com/etc.clientlibs/site/clientlibs/xilinx/all/resources/favicon.ico">
+    <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://www.xilinx.com/etc.clientlibs/site/clientlibs/xilinx/all/resources/favicon.ico">
+  
+  <title>Lab 1: Introduction to the SDSoC Development Environment &mdash; SDSoC™ Development Environment Tutorials v1.0 documentation</title>
+  
+<!-- Header information provided by Emily-->
+    <meta name="apple-itunes-app" content="app-id=1063287962">
+    <meta name="google-play-app" content="app-id=com.marketing.xilinxgo">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script src="https://kit.fontawesome.com/d3dd8c60ed.js"></script>
+    
+    <link rel="stylesheet" href="https://www.xilinx.com/etc.clientlibs/clientlibs/granite/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="https://www.xilinx.com/xx/rebrand/r40/header-footer.min.css" type="text/css">
+    
+    <script type="text/javascript" src="https://www.xilinx.com/etc.clientlibs/clientlibs/granite/jquery.min.js"></script>
+    <script type="text/javascript" src="https://www.xilinx.com/etc.clientlibs/clientlibs/granite/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="https://www.xilinx.com/xx/rebrand/r40/header-footer.min.js"></script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet" type="text/css">
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Lab 2: Performance Estimation" href="lab-2-performance-estimation.html" />
+    <link rel="prev" title="2018.3 SDSoC™ Development Environment Tutorials" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+<div class="xilinx-bs3">
+    <noindex>
+        <header data-component="header">
+            <nav class="navbar navbar-default">
+                <div class="container main-nav">
+                    <div class="row">
+                        <div class="col-xs-5 col-sm-2 logo-column">
+                            <div class="logo">
+                                <a href="https://www.xilinx.com/">
+                                    <img src="https://www.xilinx.com/etc.clientlibs/site/clientlibs/xilinx/all/resources/imgs/header/xilinx-header-logo.svg" title="Xilinx Inc" />
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-8 navbar-column">
+                            <div class="navbar navbar-collapse collapse" id="xilinx-main-menu">
+                                <ul class="nav navbar-nav nav-justified">
+                                    <li class="accordion-toggle-icons" data-component="toggle-dropdown">
+                                        <a href="https://developer.xilinx.com/">
+                                            Developers
+                                        </a>
+                                    </li>
+                                    <li class="accordion-toggle-icons" data-component="toggle-dropdown">
+                                        <a href="https://www.xilinx.com/support.html">
+                                            Support
+                                        </a>
+                                    </li>
+                                    <li class="accordion-toggle-icons" data-component="toggle-dropdown">
+                                        <a href="https://forums.xilinx.com/">
+                                            Forums
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="mini-nav col-sm-2">
+                            <button type="button" data-function="xilinx-mobile-menu" id="nav-toggle" class="navbar-toggle collapsed visible-xs-block" aria-expanded="false">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+    </noindex>
+</div>
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> SDSoC™ Development Environment Tutorials
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Lab 1: Introduction to the SDSoC Development Environment</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#step-1-creating-a-new-project">Step 1: Creating a New Project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-2-marking-functions-for-hardware-implementation">Step 2: Marking Functions for Hardware Implementation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-3-building-a-design-with-hardware-accelerators">Step 3: Building a Design with Hardware Accelerators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-4-running-the-project">Step 4: Running the Project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-5-additional-exercises">Step 5: Additional Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#summary">Summary</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="lab-2-performance-estimation.html">Lab 2: Performance Estimation</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SDSoC™ Development Environment Tutorials</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Lab 1: Introduction to the SDSoC Development Environment</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/lab-1-introduction-to-the-sdsoc-development-environment.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <p align="right">
+<a>English</a> | <a href="/docs-jp/README.md">日本語</a>
+</p><table class="xlnxhead" style="width:100%">
+  <tr>
+<td align="center" width="100%" colspan="6"><img src="https://www.xilinx.com/content/dam/xilinx/imgs/press/media-kits/corporate/xilinx-logo.png" width="30%"/><h1>2018.3 SDSoC™ Development Environment Tutorials</h1>
+<a href="https://github.com/Xilinx/SDSoC-Tutorials/branches/all">See other versions</a>
+</td>
+  </tr>
+  <tr>
+    <td colspan="5" align="center"><h2>Introduction</h2></td>
+  <tr>
+    <td align="center"><a href="README.md">Introduction</a></td>
+    <td align="center">Lab 1: Introduction to the SDSoC Development Environment</td>
+    <td align="center"><a href="lab-2-performance-estimation.md">Lab 2: Performance Estimation</a></td>
+    <td align="center"><a href="lab-3-optimize-the-application-code.md">Lab 3: Optimize the Application Code</a></td>
+    <td align="center"><a href="lab-4-optimize-the-accelerator-using-directives.md">Lab 4: Optimize the Accelerator Using Directives</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="lab-5-task-level-pipelining.md">Lab 5: Task-Level Pipelining</a></td>
+    <td align="center"><a href="lab-6-debug.md">Lab 6: Debug</a></td>
+    <td align="center"><a href="lab-7-hardware-debug.md">Lab 7: Hardware Debug</a></td>
+    <td align="center"><a href="lab-8-emulation.md">Lab 8: Emulation</a></td>
+    <td align="center"><a href="lab-9-installing-applications-from-github.md">Lab 9: Installing Examples from GitHub</a></td>
+    </tr>
+</table><div class="section" id="lab-1-introduction-to-the-sdsoc-development-environment">
+<h1>Lab 1: Introduction to the SDSoC Development Environment<a class="headerlink" href="#lab-1-introduction-to-the-sdsoc-development-environment" title="Permalink to this headline">¶</a></h1>
+<p>This lab demonstrates how you can use the SDSoC environment to create a new project using available templates, mark a function for hardware implementation, build a hardware implemented design, and run the project on a ZC702 board.</p>
+<blockquote>
+<div><strong>NOTE:</strong>  You can complete this tutorial even if you do not have a ZC702 board. When creating the SDSoC environment project, select your board and one of the available templates, if the suggested template <strong>Matrix Multiplication and Addition</strong> is not found. For example, boards such as the MicroZed with smaller Zynq-7000 devices offer the <strong>Matrix Multiplication and Addition (area reduced)</strong> application as an available template. A different application can be used to learn the objectives of this tutorial, as long as the application exits (this is a requirement to run the instrumented application on the board to collect software runtime data). Consult your board documentation for setup information.</div></blockquote>
+<div class="section" id="step-1-creating-a-new-project">
+<h2>Step 1: Creating a New Project<a class="headerlink" href="#step-1-creating-a-new-project" title="Permalink to this headline">¶</a></h2>
+<ol>
+<li><p class="first">Launch the SDx IDE 2018.2 using the desktop icon or the Start menu.</p>
+</li>
+<li><p class="first">When you launch the SDx IDE, the Workspace Launcher dialog appears. Click <strong>Browse</strong> to enter a workspace folder used to store your projects (you can use workspace folders to organize your work), then click OK to dismiss the Workspace Launcher dialog.</p>
+</li>
+<li><p class="first">The SDx IDE window opens with the Welcome tab visible when you create a new workspace. The tab includes links for Create SDx Project, Add Custom Platform, Import Project, Tutorials, and Web Resources. Clicking any of these links takes you to further options available under each link. For example, to access documentation and tutorials, clicking on Tutorials takes you to the Tutorials page which has links for SDSoC and SDAccel related documents. The Welcome tab can be dismissed by clicking the X icon or minimized if you do not wish to use it.</p>
+</li>
+<li><p class="first">From the SDx IDE menu bar select <strong>File &gt; New &gt; SDx Project</strong>. The New SDx Project dialog box opens.</p>
+<p><img alt="_images/jsi1526588122430.png" src="_images/jsi1526588122430.png" /></p>
+</li>
+<li><p class="first">Application Project is selected by default. Click <strong>Next</strong>.</p>
+</li>
+<li><p class="first">In the Create a New SDx Project page, specify the name of the project, <code class="docutils literal notranslate"><span class="pre">lab1</span></code>.</p>
+</li>
+<li><p class="first">Click <strong>Next</strong>.</p>
+</li>
+<li><p class="first">From the Platform page, select the zc702 platform.</p>
+<p><img alt="_images/vyn1526588378013.png" src="_images/vyn1526588378013.png" /></p>
+<blockquote>
+<div><p><strong>NOTE:</strong>  If a custom platform is being used that is not in the list of supported platforms, click <strong>Add Custom Platform</strong> to add the custom platform.</p>
+</div></blockquote>
+</li>
+<li><p class="first">Click <strong>Next</strong>.</p>
+</li>
+<li><p class="first">From the System configuration drop-down list for the selected platform, select <strong>Linux</strong>. Leave all other fields at their default values.</p>
+<p><img alt="_images/uyi1526588566181.png" src="_images/uyi1526588566181.png" /></p>
+</li>
+<li><p class="first">Click <strong>Next</strong>.<br />The Templates page appears, containing source code examples for the selected platform.</p>
+</li>
+<li><p class="first">From the list of application templates, select <strong>Matrix Multiplication and Addition</strong> and click <strong>Finish</strong>.</p>
+<p><img alt="_images/vfp1517375349361.png" src="_images/vfp1517375349361.png" /></p>
+</li>
+<li><p class="first">The standard build configurations are <strong>Debug</strong> and <strong>Release</strong>, and you can create additional build configurations. To get the best runtime performance, switch to use the Release configuration using one of the three methods illustrated below. The Release build configuration uses a higher compiler optimization setting than the Debug build configuration. The SDx Project Settings window also allows you to select the active configuration or create a build configuration.<br />The Build icon provides a drop-down menu for selecting the build configuration and building the project. Clicking on the Build icon builds the project.<br /><img alt="_images/rdo1517376006997.png" src="_images/rdo1517376006997.png" /><br />In the Project Explorer you can right-click on the project to select the build configuration.<br /><img alt="_images/mch1526589018767.png" src="_images/mch1526589018767.png" /><br />The SDx Project Settings window includes a Build Configurations drop-down, where you can select the active configuration or create a build configuration.
+<img alt="_images/nol1526589252028.png" src="_images/nol1526589252028.png" /><br />The SDx Project Settings window provides a summary of the project settings.</p>
+<p>When you build an SDx application, you use a build configuration (a collection of tool settings, folders and files). Each build configuration has a different purpose. Debug builds the application with extra information in the ELF (compiled and linked program) that you need to run the debugger. The debug information in an ELF increases the size of the file and makes your application information visible. The Release configuration provides the same ELF file as the Debug configuration with the exception that it has no debug information. The Estimate Performance option can be selected in any build configuration and is used to run the SDSoC environment in a mode used to estimate the performance of the application (how fast it runs), which requires different settings and steps (see <a class="reference internal" href="lab-2-performance-estimation.html"><span class="doc">Lab 2: Performance Estimation</span></a>).</p>
+</li>
+</ol>
+</div>
+<div class="section" id="step-2-marking-functions-for-hardware-implementation">
+<h2>Step 2: Marking Functions for Hardware Implementation<a class="headerlink" href="#step-2-marking-functions-for-hardware-implementation" title="Permalink to this headline">¶</a></h2>
+<p>This application has two hardware functions. One hardware function, <code class="docutils literal notranslate"><span class="pre">mmult</span></code>, multiplies two matrices to produce a matrix product, and the second hardware function, <code class="docutils literal notranslate"><span class="pre">madd</span></code>, adds two matrices to produce a matrix sum. These hardware functions are combined to compute a matrix multiply-add function. Both functions <code class="docutils literal notranslate"><span class="pre">mmult</span></code> and <code class="docutils literal notranslate"><span class="pre">madd</span></code> are specified to be implemented in hardware.</p>
+<p>When the SDSoC environment creates the project from a template, it specifies the hardware functions for you. In cases where hardware functions have been removed or have not been specified, follow the steps below to add hardware functions.</p>
+<blockquote>
+<div><strong>NOTE:</strong>  For this lab, you do not need to mark functions for hardware - the template code for matrix multiplication and addition has already marked them. If you don’t have the <code class="docutils literal notranslate"><span class="pre">madd</span></code> and <code class="docutils literal notranslate"><span class="pre">mmult</span></code> functions marked as HW Functions, you could do the following to mark them as HW Functions.</div></blockquote>
+<ol>
+<li><p class="first">The SDx Project Settings window provides a central location for setting project values. Click on the tab labeled lab1 (if the tab is not visible, double-click on the 1 file in the Project Explorer tab) and in the HW functions panel, click on the <strong>Add HW Functions</strong> <img alt="_images/vvd1517376007004.png" src="_images/vvd1517376007004.png" /> to invoke a dialog to specify hardware functions.</p>
+</li>
+<li><p class="first">Ctrl-click (press the Ctrl key and left click) on the <code class="docutils literal notranslate"><span class="pre">mmult</span></code> and <code class="docutils literal notranslate"><span class="pre">madd</span></code> functions to select them in the “Matching elements” list. Click <strong>OK</strong>, and observe that both functions have been added to the hardware functions list.</p>
+<p><img alt="_images/pdl1526589550986.png" src="_images/pdl1526589550986.png" /></p>
+<p>Alternatively, you can expand <code class="docutils literal notranslate"><span class="pre">mmult.cpp</span></code> and <code class="docutils literal notranslate"><span class="pre">madd.cpp</span></code> in the Project Explorer, right-click on <code class="docutils literal notranslate"><span class="pre">mmult</span></code> and <code class="docutils literal notranslate"><span class="pre">madd</span></code> functions, and select <strong>Toggle HW/SW</strong> (when the function is already marked for hardware, you will see the function <code class="docutils literal notranslate"><span class="pre">mmult(float[],</span> <span class="pre">float[],</span> <span class="pre">float[]):</span> <span class="pre">void</span> <span class="pre">[H]</span></code> in the Project Explorer tab). When you have a source file open in the editor, you can also select hardware functions in the Outline window.</p>
+<p><img alt="_images/kkz1526589743219.png" src="_images/kkz1526589743219.png" /></p>
+</li>
+</ol>
+</div>
+<div class="section" id="step-3-building-a-design-with-hardware-accelerators">
+<h2>Step 3: Building a Design with Hardware Accelerators<a class="headerlink" href="#step-3-building-a-design-with-hardware-accelerators" title="Permalink to this headline">¶</a></h2>
+<p>To build a project and generate an executable, bitstream, and SD Card boot image:</p>
+<ol>
+<li><p class="first">Right-click <strong>lab1</strong> in the Project Explorer and select Build Project from the context menu that appears.</p>
+<p>The SDSoC system compiler standard output (stdout) is directed to the Console tab. The functions selected for hardware are compiled using Vivado® HLS into IP blocks and integrated into a generated Vivado tools hardware system based on the selected base platform. The system compiler then invokes Vivado synthesis, place and route tools to build a bitstream, and invokes the ARM GNU compiler and linker to generate an application ELF executable file.</p>
+</li>
+<li><p class="first">In the Assistant window, below the Project Explorer tab, double-click to open the Data Motion Network Report.<br />This report shows the connections created by the SDx system compiler and the types of data transfers for each function implemented in hardware. For details, see <a class="reference external" href="lab-3-optimize-the-application-code">Lab 3: Optimize the Application Code</a>.<br /><img alt="_images/fiv1526666379843.png" src="_images/fiv1526666379843.png" /></p>
+</li>
+<li><p class="first">Open the <code class="docutils literal notranslate"><span class="pre">lab1/Release/_sds/swstubs/mmult.cpp</span></code> file, to see how the SDx system compiler replaced the original <code class="docutils literal notranslate"><span class="pre">mmult</span></code> function with one named <code class="docutils literal notranslate"><span class="pre">_p0_mmult_1_noasync</span></code> that performs transfers to and from the FPGA using <code class="docutils literal notranslate"><span class="pre">cf_send_i</span></code> and <code class="docutils literal notranslate"><span class="pre">cf_wait</span></code> functions. The SDx system compiler also replaces calls to <code class="docutils literal notranslate"><span class="pre">mmult</span></code> with <code class="docutils literal notranslate"><span class="pre">_p0_mmult_1_noasync</span></code> in <code class="docutils literal notranslate"><span class="pre">lab1/Release/_sds/swstubs/main.cpp</span></code>. The SDx system compiler uses these rewritten source files to build the ELF that accesses the hardware functions.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="step-4-running-the-project">
+<h2>Step 4: Running the Project<a class="headerlink" href="#step-4-running-the-project" title="Permalink to this headline">¶</a></h2>
+<p>To run your project on a ZC702 board:</p>
+<ol>
+<li><p class="first">From Project Explorer, select the <code class="docutils literal notranslate"><span class="pre">lab1/Release</span></code> directory and copy all files inside the <code class="docutils literal notranslate"><span class="pre">sd_card</span></code> directory to the root of an SD card.</p>
+</li>
+<li><p class="first">Insert the SD card into the ZC702 and power on the board.</p>
+</li>
+<li><p class="first">Connect to the board from a serial terminal in the SDx Terminal tab (or connect via Putty/Teraterm with Baud Rate: 115200, Data bits: 8, Stop bits: 1, Parity: None and Flow Control: None). Click the <img alt="_images/uec1517375349409.png" src="_images/uec1517375349409.png" /> icon to open the settings.</p>
+<p><img alt="_images/ngv1517375349363.png" src="_images/ngv1517375349363.png" /></p>
+</li>
+<li><p class="first">Keep the default settings in the Connect to serial port window and click <strong>OK</strong>.</p>
+</li>
+<li><p class="first">After the board boots up, you can execute the application at the Linux prompt. Type <code class="docutils literal notranslate"><span class="pre">/mnt/lab1.elf</span></code>.</p>
+<p><img alt="_images/mst1517375349397.png" src="_images/mst1517375349397.png" /></p>
+</li>
+</ol>
+<blockquote>
+<div><strong>NOTE:</strong>  The speedup is 8 times faster, when the function is accelerated in hardware. The application running on the processor takes about 184K cycles while the application running on both the processor and the FPGA takes about 22K cycles.</div></blockquote>
+</div>
+<div class="section" id="step-5-additional-exercises">
+<h2>Step 5: Additional Exercises<a class="headerlink" href="#step-5-additional-exercises" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Examine the contents of the <code class="docutils literal notranslate"><span class="pre">Release/_sds</span></code> folder. Notice the reports folder. This folder contains multiple log files and report (.rpt) files with detailed logs and reports from all the tools invoked by the build.</li>
+<li>If you are familiar with Vivado® IP integrator, in the Project Explorer, double-click on <code class="docutils literal notranslate"><span class="pre">Release/_sds/p0/vivado/prj/prj.xpr</span></code>. This is the hardware design generated from the application source code. Open the block diagram and inspect the generated IP blocks.</li>
+</ul>
+</div>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<p>After completing this tutorial, you should be able to do the following:</p>
+<ul class="simple">
+<li>Create a new SDSoC environment project for your application from a number of available platforms and project templates.</li>
+<li>Mark a function for hardware implementation.</li>
+<li>Build your project to generate a bitstream containing the hardware implemented function and an executable file that invokes this hardware implemented function.</li>
+</ul>
+<p class="xlnxfooter" align="center">
+<sup>Copyright&copy; 2018 Xilinx</sup></p></div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="lab-2-performance-estimation.html" class="btn btn-neutral float-right" title="Lab 2: Performance Estimation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="2018.3 SDSoC™ Development Environment Tutorials" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019, Xilinx
+
+    </p>
+  </div>
+    
+    
+      Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
