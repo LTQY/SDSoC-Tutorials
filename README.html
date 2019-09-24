@@ -18,7 +18,7 @@
     <link rel="icon" type="image/vnd.microsoft.icon" href="https://www.xilinx.com/etc.clientlibs/site/clientlibs/xilinx/all/resources/favicon.ico">
     <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://www.xilinx.com/etc.clientlibs/site/clientlibs/xilinx/all/resources/favicon.ico">
   
-  <title>Search &mdash; SDSoC™ Development Environment Tutorials v1.0 documentation</title>
+  <title>Introduction &mdash; SDSoC™ Development Environment Tutorials v1.0 documentation</title>
   
 <!-- Header information provided by Emily-->
     <meta name="apple-itunes-app" content="app-id=1063287962">
@@ -43,7 +43,6 @@
   
 
   
-    
   <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
   
     
@@ -56,13 +55,12 @@
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
-    <script type="text/javascript" src="_static/searchtools.js"></script>
 
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="#" /> 
+    <link rel="search" title="Search" href="search.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -136,7 +134,7 @@
 
           
 <div role="search">
-  <form id="rtd-search-form" class="wy-form" action="#" method="get">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -203,12 +201,14 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Search</li>
+      <li>Introduction</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
+            <a href="_sources/README.md.txt" rel="nofollow"> View page source</a>
+          
         
       </li>
     
@@ -220,18 +220,50 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <noscript>
-  <div id="fallback" class="admonition warning">
-    <p class="last">
-      Please activate JavaScript to enable the search functionality.
-    </p>
-  </div>
-  </noscript>
+  <p align="right">
+<a>English</a> | <a href="/docs-jp/getting-started-tutorial/README.md">日本語</a>
+</p><table class="xlnxhead" style="width:100%">
+  <tr>
+<td align="center" width="100%" colspan="6"><img src="https://www.xilinx.com/content/dam/xilinx/imgs/press/media-kits/corporate/xilinx-logo.png" width="30%"/><h1>2018.3 SDSoC™ Development Environment Tutorials</h1>
+<a href="https://github.com/Xilinx/SDSoC-Tutorials/branches/all">See other versions</a>
+</td>
+  </tr>
+  <tr>
+    <td colspan="5" align="center"><h2>Introduction</h2></td>
+  </tr>
+    <tr>
+    <td align="center">Introduction</td>
+    <td align="center"><a href="lab-1-introduction-to-the-sdsoc-development-environment.md">Lab 1: Introduction to the SDSoC Development Environment</a></td>
+    <td align="center"><a href="lab-2-performance-estimation.md">Lab 2: Performance Estimation</a></td>
+    <td align="center"><a href="lab-3-optimize-the-application-code.md">Lab 3: Optimize the Application Code</a></td>
+    <td align="center"><a href="lab-4-optimize-the-accelerator-using-directives.md">Lab 4: Optimize the Accelerator Using Directives</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="lab-5-task-level-pipelining.md">Lab 5: Task-Level Pipelining</a></td>
+    <td align="center"><a href="lab-6-debug.md">Lab 6: Debug</a></td>
+    <td align="center"><a href="lab-7-hardware-debug.md">Lab 7: Hardware Debug</a></td>
+    <td align="center"><a href="lab-8-emulation.md">Lab 8: Emulation</a></td>
+    <td align="center"><a href="lab-9-installing-applications-from-github.md">Lab 9: Installing Examples from GitHub</a></td>
+    </tr>
+</table><div class="section" id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<p>This tutorial shows how to create an SDSoC™ platform that can be used to accelerate software functions using the SDx™ Integrated Design Environment (IDE) tool.</p>
+<blockquote>
+<div><strong>NOTE:</strong>  This tutorial is separated into labs. Each lab provides general instructions and supplementary detailed steps, allowing you to make choices based on your skill level as you progress through it. If you need help completing a general instruction, go to the detailed steps, or if you are ready, simply skip the step-by-step directions and move on to the next general instruction.</div></blockquote>
+</div>
+<div class="section" id="hardware-and-software-requirements">
+<h1>Hardware and Software Requirements<a class="headerlink" href="#hardware-and-software-requirements" title="Permalink to this headline">¶</a></h1>
+<p>This tutorial requires that you have the SDx Integrated Design Environment v2018.2 installed. See the SDx Environments Release Notes, Installation, and Licensing Guide (<a class="reference external" href="https://www.xilinx.com/cgi-bin/docs/rdoc?v=2018.2%3Bd=ug1238-sdx-rnil.pdf">UG1238</a>) for instructions. The SDx tool installs the SDx IDE as well as the required Vivado Design Suite and Software Development Kit (SDK) software.</p>
+</div>
+<div class="section" id="related-information">
+<h1>Related information<a class="headerlink" href="#related-information" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><a href="lab-1-introduction-to-the-sdsoc-development-environment.md">Lab 1: Introduction to the SDSoC Development Environment</a></li>
+<li><a href="lab-2-performance-estimation.md">Lab 2: Performance Estimation</a></li>
+</ul>
+<p class="xlnxfooter" align="center">
+<sup>Copyright&copy; 2019 Xilinx</sup></p></div>
 
-  
-  <div id="search-results">
-  
-  </div>
 
            </div>
            
@@ -271,14 +303,7 @@
   
   
     
-  
-  <script type="text/javascript">
-    jQuery(function() { Search.loadIndex("searchindex.js"); });
-  </script>
-  
-  <script type="text/javascript" id="searchindexloader"></script>
    
-
 
 </body>
 </html>
