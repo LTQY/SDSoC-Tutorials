@@ -18,6 +18,7 @@ Related information
 
 .. toctree::
    :maxdepth: 2
+   :caption: Table of Contents
    
    lab-1-introduction-to-the-sdsoc-development-environment
    lab-2-performance-estimation
